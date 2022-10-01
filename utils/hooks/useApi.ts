@@ -40,7 +40,7 @@ const useApi = ({ errMsg, successMsg, resErrMsg, resSuccessMsg } = { errMsg: tru
 					data: !res.error ? res.data : null,
 					fullRes: res.fullRes
 				});
-				(successMsg && config?.successMsg !== false) && context.setFeedback(resSuccessMsg || res.message, res.error)
+				(successMsg && config?.successMsg !== false) && context.setFeedback(resSuccessMsg || res.message, 'success')
 			} else if (res.error) {
 				setState({
 					loading: false,
@@ -50,7 +50,7 @@ const useApi = ({ errMsg, successMsg, resErrMsg, resSuccessMsg } = { errMsg: tru
 					fullRes: res.fullRes
 				});
 
-				(errMsg && config?.errMsg !== false) && context.setFeedback(resErrMsg || res.message, res.error)
+				(errMsg && config?.errMsg !== false) && context.setFeedback(resErrMsg || res.message, 'error')
 			}
 			if (!res.error) {
 				if (successCallback) successCallback(res)
