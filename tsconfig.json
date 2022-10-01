@@ -16,8 +16,8 @@
     "incremental": true,
     "baseUrl": ".",
 		"paths": {
-			"@styles/*": ["./styles/*"],
 			"@common/*": ["./components/common/*"],
+			"@styles/*": ["./components/styles/*"],
 			"@utils/*": ["./utils/*"],
 			"@context/*": ["./context/*"],
       "@wrapper/*": ["./components/wrapper/*"],

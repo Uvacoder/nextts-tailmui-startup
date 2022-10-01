@@ -20,14 +20,14 @@ const useApi = ({ errMsg, successMsg, resErrMsg, resSuccessMsg } = { errMsg: tru
 		}
 	}, [])
 
-	const executeApi = async (apiFun: Function, successCallback?: Function, errCallback?: Function) => {
+	const executeApi = async (apiFun: Function, successCallback?: Function, errCallback?: Function, config?: any) => {
 		if (apiFun) {
-			processing(apiFun, successCallback, errCallback)
+			processing(apiFun, successCallback, errCallback, config)
 		}
 	}
 
-	const processing = async (apiFun: Function, successCallback?: Function, errCallback?: Function) => {
-		setState({ ...state, loading: true })
+	const processing = async (apiFun: Function, successCallback?: Function, errCallback?: Function, config?: any) => {
+		setState({ ...state, loading: config?.loading ?? true })
 		let res = null
 		if (apiFun instanceof Function) res = await apiFun()
 		else res = await apiFun
@@ -39,8 +39,8 @@ const useApi = ({ errMsg, successMsg, resErrMsg, resSuccessMsg } = { errMsg: tru
 					message: resSuccessMsg || res.message,
 					data: !res.error ? res.data : null,
 					fullRes: res.fullRes
-				})
-				successMsg && context.setFeedback(resSuccessMsg || res.message, res.error)
+				});
+				(successMsg && config?.successMsg !== false) && context.setFeedback(resSuccessMsg || res.message, res.error)
 			} else if (res.error) {
 				setState({
 					loading: false,
@@ -48,9 +48,9 @@ const useApi = ({ errMsg, successMsg, resErrMsg, resSuccessMsg } = { errMsg: tru
 					message: resErrMsg || res.message,
 					data: !res.error ? res.data : null,
 					fullRes: res.fullRes
-				})
+				});
 
-				errMsg && context.setFeedback(resErrMsg || res.message, res.error)
+				(errMsg && config?.errMsg !== false) && context.setFeedback(resErrMsg || res.message, res.error)
 			}
 			if (!res.error) {
 				if (successCallback) successCallback(res)

@@ -4,7 +4,7 @@ import React, { SyntheticEvent } from 'react'
 interface Props {
     open: boolean,
     message: Array<string>,
-    type: 'error' | 'success',
+    type: any,
     handleClose: () => void
 }
 

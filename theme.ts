@@ -103,10 +103,13 @@ const theme = createTheme({
 
     palette: {
         primary: {
-            main: "#473BF0",
+            main: '#FA6444',
         },
         secondary: {
-            main: "#161C2D",
+            main: '#12141D',
+        },
+        success: {
+            main: '#34D399'
         }
     },
 
