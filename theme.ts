@@ -1,61 +1,8 @@
 import { createTheme } from "@mui/material/styles";
-
+const radius = 5
 // Create a theme instance.
 const theme = createTheme({
     components: {
-        MuiButton: {
-            styleOverrides: {
-                root: {
-                    borderRadius: "7px",
-                    fontSize: "17px",
-                    letterSpacing: "-0.5px",
-                    padding: "7px 35px",
-                    textTransform: "unset",
-                },
-                disableElevation: {
-                    borderRadius: "7px",
-                    fontSize: "17px",
-                    letterSpacing: "-0.5px",
-                    padding: "7px 35px",
-                    textTransform: "unset",
-                },
-                outlined: {
-                    borderRadius: "7px",
-                    fontSize: "17px",
-                    letterSpacing: "-0.5px",
-                    padding: "5px 35px",
-                    textTransform: "unset",
-                },
-                contained: {
-                    borderRadius: "7px",
-                    fontSize: "17px",
-                    letterSpacing: "-0.5px",
-                    padding: "7px 35px",
-                    textTransform: "unset",
-                    boxShadow: 'none',
-                    '&:hover': {
-                        boxShadow: 'none',
-                    },
-                }
-            }
-        },
-        MuiStepIcon: {
-            styleOverrides: {
-                root: {
-                    width: '40px',
-                    height: '40px',
-                    fontWeight: 'bold',
-                    '&$completed': {
-                        color: '#318940',
-                        zIndex: 111
-                    },
-                    '&$active': {
-                        color: '#473BF0',
-                        zIndex: 111
-                    },
-                },
-            }
-        },
         MuiAutocomplete: {
             styleOverrides: {
                 inputRoot: {
@@ -80,7 +27,7 @@ const theme = createTheme({
         MuiTableContainer: {
             styleOverrides: {
                 root: {
-                    borderRadius: '7px',
+                    borderRadius: radius,
                     border: '1px solid #d3d3d3'
                 },
 
@@ -90,20 +37,26 @@ const theme = createTheme({
             styleOverrides: {
                 root: {
                     background: 'white',
-                    borderRadius: '10px',
-                    height: '48px',
+                    borderRadius: radius,
                 },
                 multiline: {
                     height: '100%',
                 },
 
             }
+        },
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    textTransform: 'none',
+                }
+            }
         }
     },
 
     palette: {
         primary: {
-            main: '#FA6444',
+            main: '#473BF0',
         },
         secondary: {
             main: '#12141D',
