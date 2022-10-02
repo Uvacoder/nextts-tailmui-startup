@@ -7,7 +7,7 @@ export {
 }
 
 const CSContainer = styled.div`
-${tw`xl:container px-5 sm:px-10 mx-auto`}
+${tw` mx-auto max-w-5xl px-5 sm:px-10 my-12`}
 `
 
 const CSVColCenter = styled.div`

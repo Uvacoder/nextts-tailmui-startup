@@ -1,7 +1,8 @@
+import Home from '@pages/home/Home'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
-const Home: NextPage = () => {
+const Index: NextPage = () => {
   return (
     <div>
       <Head>
@@ -10,9 +11,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-
+      <Home />
     </div>
   )
 }
 
-export default Home
+export default Index

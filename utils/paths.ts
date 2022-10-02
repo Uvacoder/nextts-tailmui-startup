@@ -1,0 +1,6 @@
+export const url_addMedicine = '/add-medicine'
+export const url_showMedicine = '/show-medicine'
+export const url_purchaseMedicine = '/purchase-medicine'
+export const url_saleMedicine = '/sale-medicine'
+export const url_availableMedicine = '/available-medicine'
+export const url_history = '/history'
